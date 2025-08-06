@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uktamov's Profile</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        transition: background 0.3s ease-in-out;
+        overflow-x: hidden;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        max-width: 360px;
+        width: 100%;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .card img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #fff;
+        margin-bottom: 1rem;
+        animation: popIn 1s ease-out 0.2s forwards;
+        opacity: 0;
+      }
+
+      @keyframes popIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .card h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+        animation: fadeIn 1s ease-out 0.4s forwards;
+        opacity: 0;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.85;
+        animation: fadeIn 1s ease-out 0.6s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .links a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 14px;
+        padding: 0.7rem 1rem;
+        margin-bottom: 0.7rem;
+        background: rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideFadeIn 0.6s ease-out forwards;
+      }
+
+      .links a:nth-child(1) {
+        animation-delay: 0.8s;
+      }
+      .links a:nth-child(2) {
+        animation-delay: 1s;
+      }
+      .links a:nth-child(3) {
+        animation-delay: 1.2s;
+      }
+      .links a:nth-child(4) {
+        animation-delay: 1.4s;
+      }
+
+      @keyframes slideFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        padding: 10px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        color: #fff;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      body.dark {
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+      }
+
+      body.dark .card {
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      body.dark .links a {
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      @media (max-width: 400px) {
+        .card {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Theme</button>
+    <div class="card">
+      <img src="imgs/pfp.jpg" alt="Uktamov" />
+      <h1>Uktamov</h1>
+      <p>A passionate individual who loves to connect and share knowledge.</p>
+      <div class="links">
+        <a href="mailto:uktamov7722@gmail.com">Email me</a>
+        <a href="https://instagram.com/u_ktamov7" target="_blank">instagram</a>
+        <a href="https://t.me/UKTAMOV7722" target="_blank"
+          >Telegram (Personal)</a
+        >
+        <a href="https://t.me/Elevate_English" target="_blank"
+          >Telegram (Channel)</a
+        >
+      </div>
+    </div>
+
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+      }
+    </script>
+  </body>
+</html>
